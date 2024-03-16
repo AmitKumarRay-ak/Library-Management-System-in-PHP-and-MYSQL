@@ -112,12 +112,14 @@ include("navbar.php");
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td><b>Password: </b></td>
-                                <td class="td1">
-                                    <?php echo " " . $row['password']; ?>
-                                </td>
-                            </tr>
+                            <!-- <tr> -->
+                                <!-- <td><b>Password: </b></td> -->
+                                <!-- <td class="td1"> -->
+                                    <?php 
+                                    // echo " " . $row['password']; 
+                                    ?>
+                                <!-- </td> -->
+                            <!-- </tr> -->
 
                             <tr>
                                 <td><b>Roll: </b></td>

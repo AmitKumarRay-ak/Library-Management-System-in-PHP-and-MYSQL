@@ -51,7 +51,7 @@ include ("navbar.php");
         $sql1 = "DELETE FROM `fine` WHERE STATUS = 'paid'";
         $fire1 = mysqli_query($db, $sql1);
         if (($fire1) === TRUE) {
-            echo "Records deleted successfully";
+            // echo "Records deleted successfully";
         } else {
             echo "Not Working: ";
         }

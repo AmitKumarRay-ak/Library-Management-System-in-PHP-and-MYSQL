@@ -1,6 +1,6 @@
 <?php
-include("connection.php");
-include("navbar.php");
+include ("connection.php");
+include ("navbar.php");
 ?>
 
 <!DOCTYPE html>
@@ -24,26 +24,19 @@ include("navbar.php");
 
 
     <section>
-        <div class="container bg-light">
+        <div class="container bg-light mt-5">
             <div class="row">
                 <div class="col-md-8 mx-auto text-danger">
-                    <p>If you have any suggesions or questions please comment below.</p>
-                    <br><br><br>
-                    <form action="" method="POST">
-                        <input class="form-control mt-1" type="text" name="comment" placeholder="Write Something .... ">
-                        <input class="btn btn-primary mt-3" type="submit" name="submit" value="Comment">
-                    </form>
 
 
-                    <br><br>
-                    <hr>
+                    <br>
                     <h1 class="display-6 text-warning">All Comments</h1>
 
                     <div id="getdata" style="overflow:scroll; height:300px;">
                         <?php
-                        if (isset($_POST['submit'])) {
-                            $sql = "INSERT INTO `comments`(`username`,`comment`) VALUES ('New User','$_POST[comment]')";
+                            $sql = "INSERT INTO `comments` (`username`, `comment`) VALUES ('New User', '$comment')";
                             if (mysqli_query($db, $sql)) {
+                                // Retrieve comments from the database and display them
                                 $q = "SELECT * FROM `comments` ORDER BY id DESC";
                                 $res = mysqli_query($db, $q);
 
@@ -63,30 +56,9 @@ include("navbar.php");
                                 }
                                 echo "</table>";
                             }
-                        } else {
-                            $q = "SELECT * FROM `comments` ORDER BY id DESC";
-                            $res = mysqli_query($db, $q);
-
-                            echo "<table class='table table-bordered'>";
-                            while ($row = mysqli_fetch_assoc($res)) {
-                                echo "<tr>";
-
-                                echo "<td style='width:40%;'>";
-                                echo $row['username'];
-                                echo "</td>";
-
-                                echo "<td>";
-                                echo $row['comment'];
-                                echo "</td>";
-
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-                        }
                         ?>
-
-
                     </div>
+                    <br>
                 </div>
             </div>
             <br>
