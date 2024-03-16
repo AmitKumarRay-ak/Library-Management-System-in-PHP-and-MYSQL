@@ -31,12 +31,8 @@ include ("navbar.php");
 
                     <br>
                     <h1 class="display-6 text-warning">All Comments</h1>
-
                     <div id="getdata" style="overflow:scroll; height:300px;">
                         <?php
-                            $sql = "INSERT INTO `comments` (`username`, `comment`) VALUES ('New User', '$comment')";
-                            if (mysqli_query($db, $sql)) {
-                                // Retrieve comments from the database and display them
                                 $q = "SELECT * FROM `comments` ORDER BY id DESC";
                                 $res = mysqli_query($db, $q);
 
@@ -55,10 +51,10 @@ include ("navbar.php");
                                     echo "</tr>";
                                 }
                                 echo "</table>";
-                            }
                         ?>
                     </div>
                     <br>
+
                 </div>
             </div>
             <br>
